@@ -1,111 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>S Vikaasni | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <button id="navToggle" aria-label="Toggle navigation">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </button>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <header>
-    <h1>S VIKAASNI</h1>
-    <p class="typing">💻 Computer Science Student | Web Developer | Python Enthusiast</p>
-  </header>
-  <section class="section" id="about">
-    <h2>About Me</h2>
-    <p>
-      I am an Engineering student currently pursuing B.E. CSE at Rajalakshmi Institute of Technology.
-      I completed my schooling in Fairlands Foundation School with 95.4% in my 10<sup>th</sup> and 12<sup>th</sup> standards
-      and also scored 92.4 percentile in JEE Mains.
-    </p>
-  </section>
-  <section class="section" id="skills">
-    <h2>Skills</h2>
-    <div class="skills-list">
-      <div>C Programming</div>
-      <div>Python, Tableau</div>
-      <div>Data Visualization</div>
-      <div>Canva</div>
-      <div>HTML, CSS, JavaScript</div>
-      <div>React.js (Learning)</div>
-    </div>
-  </section>
-  <section class="section">
-    <h2>Internship</h2>
-    <p>
-      I completed an internship under 1M1B (Green internship) in partnership with AICTE and Salesforce.
-      Through this internship I gained green skills as well as technical skill of creating dashboards through Tableau.
-      This internship also gave me an opportunity of doing a live project and gaining real-life experiences.
-    </p>
-  </section>
-  <section class="section">
-    <h2>Experience</h2>
-    <p><strong>2024 - 2025:</strong> Built multiple responsive web applications using HTML, CSS, JavaScript, and React. Created portfolio websites, e-commerce mockups, and educational platforms.</p>
-    <p><strong>2024 - 2025:</strong> Worked on Python-based data analysis projects using Pandas, NumPy, and Matplotlib. Built data dashboards and simple ML models for academic use cases.</p>
-  </section>
-  <section class="section" id="projects">
-    <h2>Projects</h2>
-    <div class="projects-list">
-      <div>
-        <strong>🔢 Web Calculator</strong><br />
-        Built using HTML, CSS & JavaScript
-        <div class="project-buttons">
-          <a href="#">Demo</a>
-          <a href="#">GitHub</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>S Vikaasni | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Quicksand', sans-serif;
+      }
+
+      body {
+        background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+        color: #fff;
+        padding: 2rem;
+      }
+
+      nav {
+        position: fixed;
+        top: 70px;
+        right: 30px;
+        background-color: rgba(0, 247, 255, 0.1);
+        padding: 10px 20px;
+        border-radius: 10px;
+        z-index: 1000;
+        box-shadow: 0 0 10px rgba(0, 247, 255, 0.3);
+        display: flex;
+        gap: 20px;
+        transition: right 0.4s ease;
+      }
+
+      nav a {
+        color: #00f7ff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: #a0f8ff;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 3rem;
+        animation: fadeInDown 1s ease forwards;
+      }
+
+      header h1 {
+        font-size: 3rem;
+        color: #00f7ff;
+      }
+
+      .typing {
+        font-size: 1.2rem;
+        color: #a0f8ff;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 2px solid #00f7ff;
+        width: 0;
+        animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite;
+        margin: 0 auto;
+      }
+
+      @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+      }
+
+      @keyframes blink {
+        0%, 100% { border-color: transparent; }
+        50% { border-color: #00f7ff; }
+      }
+
+      .section {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 0 20px rgba(0, 247, 255, 0.2);
+        opacity: 0;
+        transform: translateY(40px);
+        animation: fadeUp 1s ease forwards;
+        animation-delay: 0.2s;
+      }
+
+      .section h2 {
+        color: #00f7ff;
+        margin-bottom: 1rem;
+      }
+
+      .skills-list, .contact-info, .projects-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .skills-list div, .contact-info a, .projects-list div {
+        background-color: rgba(0, 247, 255, 0.1);
+        padding: 0.75rem 1.5rem;
+        border-radius: 10px;
+        color: #fff;
+        text-decoration: none;
+        flex: 1 1 45%;
+        text-align: center;
+        transition: transform 0.3s ease, background 0.3s ease;
+      }
+
+      .skills-list div:hover, .contact-info a:hover, .projects-list div:hover {
+        transform: translateY(-5px);
+        background-color: rgba(0, 247, 255, 0.3);
+      }
+
+      .project-buttons {
+        margin-top: 0.5rem;
+      }
+
+      .project-buttons a {
+        margin: 0.25rem;
+        background-color: #00f7ff;
+        color: #000;
+        padding: 0.3rem 0.8rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.85rem;
+        display: inline-block;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 2rem;
+        color: #bbb;
+        animation: fadeIn 2s ease forwards;
+      }
+
+      @keyframes fadeUp {
+        0% {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInDown {
+        0% {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      /* Hamburger Toggle Button */
+      #navToggle {
+        position: fixed;
+        top: 20px;
+        right: 30px;
+        width: 35px;
+        height: 30px;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 1001;
+        cursor: pointer;
+        background: none;
+        border: none;
+      }
+
+      #navToggle .bar {
+        height: 4px;
+        width: 100%;
+        background-color: #00f7ff;
+        border-radius: 4px;
+        transition: all 0.4s ease-in-out;
+      }
+
+      #navToggle.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+
+      #navToggle.active .bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      #navToggle.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+
+      /* Responsive Nav */
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: column;
+          position: fixed;
+          top: 70px;
+          right: -250px;
+          background-color: rgba(0, 247, 255, 0.15);
+          width: 200px;
+          padding: 15px;
+          border-radius: 12px;
+          box-shadow: 0 0 20px rgba(0, 247, 255, 0.4);
+          transition: right 0.4s ease;
+        }
+
+        nav.show {
+          right: 30px;
+        }
+
+        nav a {
+          margin: 10px 0;
+        }
+
+        #navToggle {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Navigation Toggle Button -->
+    <button id="navToggle" aria-label="Toggle navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Navigation Menu -->
+    <nav>
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Header -->
+    <header>
+      <h1>S VIKAASNI</h1>
+      <p class="typing">💻 Computer Science Student | Web Developer | Python Enthusiast</p>
+    </header>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <h2>About Me</h2>
+      <p>
+        I am an Engineering student currently pursuing B.E. CSE at Rajalakshmi Institute of Technology.
+        I completed my schooling in Fairlands Foundation School with 95.4% in my 10<sup>th</sup> and 12<sup>th</sup> standards
+        and also scored 92.4 percentile in JEE Mains.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <h2>Skills</h2>
+      <div class="skills-list">
+        <div>C Programming</div>
+        <div>Python, Tableau</div>
+        <div>Data Visualization</div>
+        <div>Canva</div>
+        <div>HTML, CSS, JavaScript</div>
+        <div>React.js (Learning)</div>
+      </div>
+    </section>
+
+    <!-- Internship -->
+    <section class="section">
+      <h2>Internship</h2>
+      <p>
+        I completed an internship under 1M1B (Green internship) in partnership with AICTE and Salesforce.
+        Through this internship I gained green skills as well as technical skill of creating dashboards through Tableau.
+        This internship also gave me an opportunity of doing a live project and gaining real-life experiences.
+      </p>
+    </section>
+
+    <!-- Experience -->
+    <section class="section">
+      <h2>Experience</h2>
+      <p><strong>2024 - 2025:</strong> Built multiple responsive web applications using HTML, CSS, JavaScript, and React. Created portfolio websites, e-commerce mockups, and educational platforms.</p>
+      <p><strong>2024 - 2025:</strong> Worked on Python-based data analysis projects using Pandas, NumPy, and Matplotlib. Built data dashboards and simple ML models for academic use cases.</p>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <h2>Projects</h2>
+      <div class="projects-list">
+        <div>
+          <strong>🔢 Web Calculator</strong><br />
+          Built using HTML, CSS & JavaScript
+          <div class="project-buttons">
+            <a href="#">Demo</a>
+            <a href="#">GitHub</a>
+          </div>
+        </div>
+        <div>
+          <strong>📚 Online Learning Platform</strong><br />
+          Educational website with video and quiz modules
+          <div class="project-buttons">
+            <a href="#">Demo</a>
+            <a href="#">GitHub</a>
+          </div>
+        </div>
+        <div>
+          <strong>🛒 Mini E-Commerce Website</strong><br />
+          Product listings, cart, and checkout functionality
+          <div class="project-buttons">
+            <a href="#">Demo</a>
+            <a href="#">GitHub</a>
+          </div>
         </div>
       </div>
-      <div>
-        <strong>📚 Online Learning Platform</strong><br />
-        Educational website with video and quiz modules
-        <div class="project-buttons">
-          <a href="#">Demo</a>
-          <a href="#">GitHub</a>
-        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section" id="education">
+      <h2>Education</h2>
+      <p>2022: Completed 10<sup>th</sup> with 95.4%</p>
+      <p>2024: Completed 12<sup>th</sup> with 95.4% and scored 92.4 percentile in JEE Mains</p>
+      <p>2024–2028: Pursuing B.E. CSE at Rajalakshmi Institute of Technology</p>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <div class="contact-info">
+        <a href="tel:+919363604609">📞 +91 9363604609</a>
+        <a href="mailto:svikaasni@gmail.com">📧 svikaasni@gmail.com</a>
+        <a href="https://www.linkedin.com/in/vikaasni-selvakumr-02072a32b" target="_blank">🔗 LinkedIn</a>
       </div>
-      <div>
-        <strong>🛒 Mini E-Commerce Website</strong><br />
-        Product listings, cart, and checkout functionality
-        <div class="project-buttons">
-          <a href="#">Demo</a>
-          <a href="#">GitHub</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section" id="education">
-    <h2>Education</h2>
-    <ul style="list-style: none; padding: 0;">
-      <li><strong>2022:</strong> Completed 10<sup>th</sup> with 95.4%</li>
-      <li><strong>2024:</strong> Completed 12<sup>th</sup> with 95.4% and scored 92.4 percentile in JEE Mains</li>
-      <li><strong>2024–2028:</strong> Pursuing B.E. CSE at Rajalakshmi Institute of Technology</li>
-    </ul>
-  </section>
-  <section class="section" id="contact">
-    <h2>Contact Me</h2>
-    <p>Feel free to reach out via call, email, or LinkedIn!</p>
-    <div class="contact-info">
-      <a href="tel:+919363604609">📞 +91 9363604609</a>
-      <a href="mailto:svikaasni@gmail.com">📧 svikaasni@gmail.com</a>
-      <a href="https://www.linkedin.com/in/vikaasni-selvakumr-02072a32b" target="_blank">🔗 LinkedIn</a>
-    </div>
-  </section>
-  <footer>
-    <p>&copy; 2025 S Vikaasni. All rights reserved.</p>
-  </footer>
-  <script src="script.js"></script>
-</body>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 S Vikaasni. All rights reserved.</p>
+    </footer>
+
+    <!-- Script -->
+    <script>
+      const toggleBtn = document.getElementById('navToggle');
+      const navMenu = document.querySelector('nav');
+
+      toggleBtn.addEventListener('click', () => {
+        toggleBtn.classList.toggle('active');
+        navMenu.classList.toggle('show');
+      });
+    </script>
+
+  </body>
 </html>
