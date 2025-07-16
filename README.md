@@ -99,3 +99,17 @@ Explore the sections and animations on both desktop and mobile devices.
 
 🙋‍♀️ About Me:
 I'm S Vikaasni, a passionate Computer Science student focused on web development, Python, and data visualization. This portfolio reflects my academic journey, skills, and creative work.
+
+---
+
+### PREVIEW
+
+<img width="1828" height="851" alt="Image" src="https://github.com/user-attachments/assets/25e3c19b-324f-4ef7-9132-5e2b402ed8bc" />
+
+<img width="1774" height="614" alt="Image" src="https://github.com/user-attachments/assets/8d6a91d7-37e4-4101-ac96-0b8406b9fe5f" />
+
+<img width="1738" height="838" alt="Image" src="https://github.com/user-attachments/assets/d2df6233-fe8b-4932-a937-b7fd04e22797" />
+
+<img width="1768" height="733" alt="Image" src="https://github.com/user-attachments/assets/bc702ad6-5ece-43d0-a10c-219e950e7af0" />
+
+---
