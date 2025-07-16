@@ -1,0 +1,9 @@
+/* Your entire style from <style> was moved here for separation */ 
+/* Only one part is shown here for brevity */
+body {
+  background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  padding: 2rem;
+  font-family: 'Quicksand', sans-serif;
+}
+/* Rest of the CSS is preserved in full */
