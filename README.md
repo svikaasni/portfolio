@@ -11,8 +11,12 @@ DURATION : 4 WEEKS
 
 MENTOR : NEELA SANTHOS
 
+---
+
 📌 Project: S Vikaasni – Personal Portfolio Website
 This is my personal portfolio website built using HTML, CSS, and JavaScript to showcase my skills, projects, experience, and education. The design features a modern dark theme with glowing cyan accents, smooth animations, and a responsive layout optimized for both desktop and mobile devices.
+
+---
 
 🚀 Features:
 💫 Clean and vibrant user interface with animated transitions
@@ -25,6 +29,8 @@ This is my personal portfolio website built using HTML, CSS, and JavaScript to s
 
 📧 Easy contact options via phone, email, and LinkedIn
 
+---
+
 💼 Technologies Used:
 HTML5
 
@@ -34,12 +40,16 @@ JavaScript (DOM manipulation for interactivity)
 
 Google Fonts (Quicksand)
 
+---
+
 📁 How to Use:
 Clone or download this repository.
 
 Open index.html in your browser.
 
 Explore the portfolio sections and animations.
+
+---
 
 🙋‍♀️ About Me:
 I’m S Vikaasni, a Computer Science Engineering student passionate about web development, data visualization, and Python programming. This portfolio reflects my journey, achievements, and skills.
